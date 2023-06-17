@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coordonnées de la cité secrête</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Times New Roman', Times, serif;
+            background-image: url('https://vuela.tag.com.gt/hs-fs/hubfs/destinos-thumnail-tikal.jpg?width=900&name=destinos-thumnail-tikal.jpg');
+            background-size: cover;
+            color: #8B4513;
+        }
+
+        .passwordInput {
+            margin-right: 10px;
+            border: none;
+            background: #fff6e5;
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 5px;
+            width: 100px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        button {
+            background: #8B4513;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #dragonImage {
+            display: none;
+            width: 400px;
+            height: 400px;
+        }
+		
+		        #dragonImage2 {
+            display: none;
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+ <textarea id="passwordInput1" class="passwordInput"></textarea>
+    <textarea id="passwordInput2" class="passwordInput"></textarea>
+    <textarea id="passwordInput3" class="passwordInput"></textarea>
+    <textarea id="passwordInput4" class="passwordInput"></textarea>
+    <textarea id="passwordInput5" class="passwordInput"></textarea>
+    <textarea id="passwordInput6" class="passwordInput"></textarea>
+	
+    <button onclick="checkPassword()">Validez</button>
+    <img id="dragonImage" src="sacrifice.jpg">
+<img id="dragonImage2" src="dragon_reussite.jpg">
+
+<audio id="myAudio">
+  <source src="https://universal-soundbank.com/sounds/9672.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<audio id="myAudio2">
+  <source src="https://universal-soundbank.com/sounds/5917.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+    <script>
+	var myAudio = document.getElementById("myAudio");
+	var myAudio2 = document.getElementById("myAudio2");
+function playAudio() { 
+  myAudio.play(); 
+} 
+function playAudio2() { 
+  myAudio2.play(); 
+} 
+	
+        function checkPassword() {
+   
+            var correctPassword = ["17", "13", "20", "89", "37", "25"];
+            var userPassword = [];
+            userPassword.push(document.getElementById("passwordInput1").value);
+            userPassword.push(document.getElementById("passwordInput2").value);
+            userPassword.push(document.getElementById("passwordInput3").value);
+            userPassword.push(document.getElementById("passwordInput4").value);
+            userPassword.push(document.getElementById("passwordInput5").value);
+            userPassword.push(document.getElementById("passwordInput6").value);
+
+            if (JSON.stringify(userPassword) == JSON.stringify(correctPassword)) {
+
+                alert("Vous avez trouvé !				la clé a été dissimulée sous le tiroir du bureau de Agathe Francisco. Faites en bonne usage où Kukumatz vous transformera en serpent à plumes !!! " );
+				document.getElementById('dragonImage2').style.display = 'block';
+				document.getElementById('dragonImage').style.display = 'none';
+				playAudio2(); 
+				
+            } else {
+                document.getElementById('dragonImage').style.display = 'block';
+				document.getElementById('dragonImage2').style.display = 'none';
+				playAudio(); 
+            }
+        }
+    </script>
+</body>
+</html>
